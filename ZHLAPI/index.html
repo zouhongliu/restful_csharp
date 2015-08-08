@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hongliu Hotel</title>
+</head>
+
+
+<body>
+
+	<!--Rest API call -->
+    <div>
+        <h2>All Products</h2>
+        <ul id="products" />
+    </div>
+    <div>
+        <h2>Search by ID</h2>
+        <input type="text" id="prodId" size="5" />
+        <input type="button" value="Search" onclick="find();" />
+        <p id="product" />
+    </div>
+    
+	<!-- google map -->
+	<div id="googleMap" style="width:500px;height:380px;"></div>
+
+
+
+	<!-- google map -->
+	<script
+	src="http://maps.googleapis.com/maps/api/js">
+	</script>
+
+
+	<script>
+	// This example displays a marker at the center of Hotel.
+	// When the user clicks the marker, an info window opens.
+	function initialize() {
+  		var myLatlng = new google.maps.LatLng(1.312908, 103.938833);
+  		var mapOptions = {
+    		zoom: 15,
+    		center: myLatlng
+  		};
+
+  		var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+
+  		var contentString = '<div id="content">'+
+      		'<div id="siteNotice">'+
+      		'</div>'+
+      		'<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+      		'<div id="bodyContent">'+
+      		'<p><b>Hongliu Hotel</b>, also referred to as <b>Hl hotel</b>, is balabala ' +
+			'<p>Attribution: Hongliu Hotel, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+      		'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+      		'</div>'+
+      		'</div>';
+
+  		var infowindow = new google.maps.InfoWindow({
+      		content: contentString
+  		});
+
+  		var marker = new google.maps.Marker({
+      		position: myLatlng,
+      		map: map,
+      		title: 'Hongliu hotel'
+  		});
+  		google.maps.event.addListener(marker, 'click', function() {
+    		infowindow.open(map,marker);
+  		});
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+  	</script>
+    
+    
+    
+    <!--Rest API call -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script>
+    var uri = 'api/products';
+
+    $(document).ready(function () {
+      // Send an AJAX request
+      $.getJSON(uri)
+          .done(function (data) {
+            // On success, 'data' contains a list of products.
+            $.each(data, function (key, item) {
+              // Add a list item for the product.
+              $('<li>', { text: formatItem(item) }).appendTo($('#products'));
+            });
+          });
+    });
+
+    function formatItem(item) {
+      return item.Name + ': $' + item.Price;
+    }
+
+    function find() {
+      var id = $('#prodId').val();
+      $.getJSON(uri + '/' + id)
+          .done(function (data) {
+            $('#product').text(formatItem(data));
+          })
+          .fail(function (jqXHR, textStatus, err) {
+            $('#product').text('Error: ' + err);
+          });
+    }
+    </script>
+</body>
+</html>

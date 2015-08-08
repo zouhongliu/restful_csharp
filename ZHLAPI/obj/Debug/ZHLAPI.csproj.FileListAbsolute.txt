@@ -1,0 +1,14 @@
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\bin\ZHLAPI.dll.config
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\bin\ZHLAPI.dll
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\bin\ZHLAPI.pdb
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\bin\Newtonsoft.Json.dll
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\bin\System.Net.Http.Formatting.dll
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\bin\System.Web.Http.dll
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\bin\System.Web.Http.WebHost.dll
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\bin\Newtonsoft.Json.xml
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\bin\System.Net.Http.Formatting.xml
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\bin\System.Web.Http.xml
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\bin\System.Web.Http.WebHost.xml
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\obj\Debug\ZHLAPI.csprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\obj\Debug\ZHLAPI.dll
+\\vmware-host\Shared Folders\Desktop\try\interview\ZHLAPI\ZHLAPI\obj\Debug\ZHLAPI.pdb
